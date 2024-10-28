@@ -106,3 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 })
+
+function postData() {
+    const unameInp = document.getElementById('inp_uname');
+    const pwdInp = document.getElementById('inp_pwd');
+    fetch('http://localhost:8000', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: unameInp.value,
+            password: pwdInp.value
+        })
+    })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+}
